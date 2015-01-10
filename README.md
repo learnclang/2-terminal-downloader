@@ -7,10 +7,11 @@ To build a standalone terminal application that downloads a given file onto disk
 ```cmd
 $ lc_download
 Please enter a URL
-$ lc_download http://example.com/file.gif
+$ lc_download https://raw.githubusercontent.com/learnclang/current/master/img/c.png
 $ ./file.gif
 ```
 
+- [Example in Python](https://github.com/learnclang/current/blob/master/src/python/lc_download.py)
 - [Rules](https://github.com/learnclang/about/wiki/Introduction#rules)
 - [Chat](https://gitter.im/learnclang/general)
 - [Wiki](https://github.com/learnclang/current/wiki)
