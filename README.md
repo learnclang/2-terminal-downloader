@@ -8,7 +8,7 @@ To build a standalone terminal application that downloads a given file onto disk
 $ lc_download
 Please enter a URL
 $ lc_download https://raw.githubusercontent.com/learnclang/current/master/img/c.png
-$ ./file.gif
+$ ./c.png
 ```
 
 - [Example in Python](https://github.com/learnclang/current/blob/master/src/python/lc_download.py)
