@@ -26,7 +26,7 @@ The project **MUST** include:
 
 - A standalone, potentially platform-dependent application for downloading a file via a terminal.
 
-The **MAY** include:
+The project **MAY** include:
 
 - Linking with a standard or third-party library
 - In order to establish a connection with a remote server
