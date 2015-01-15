@@ -20,5 +20,6 @@ int main() {
 		return 128;
 	}
 
+	curl_easy_cleanup(curl);
 	return 0;
 }

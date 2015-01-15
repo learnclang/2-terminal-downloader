@@ -3,7 +3,13 @@
 	[
 		{
 			"follow_symlinks": true,
-			"path": "../.."
+			"path": "../..",
+			"folder_exclude_patterns" : [
+				"build",
+				"lib",
+				"img",
+				".git"
+			],
 		}
 	]
 }
