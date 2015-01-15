@@ -4,18 +4,18 @@ aux_source_directory(../../src/c SRC_LIST)
 
 set(LIBCURL_VERSION 7.37.0-1 
 	CACHE STRING "Version of libcurl to use - must be in our lib directory")
+set(PLATFORM_ID ""
+	CACHE STRING "Platform specifier, like win7-msvc9_x86_64")
 set(LIBCURL_INSTALL_DIRECTORY ""
 	CACHE PATH "The location of the library installation directory, contains 'lib' and 'include' dirs")
 
 if(NOT LIBCURL_INSTALL_DIRECTORY)
-	if(APPLE)
-		set(PLATFORM_DESCRIPTOR osx-${_CURRENT_OSX_VERSION}_${CMAKE_HOST_SYSTEM_PROCESSOR})
-	elseif(WIN32)
-		message(SEND_ERROR "On windows, please specify the LIBCURL_INSTALL_DIRECTORY, it should be something like lib/curl/<version>/win7-msvc9_x86_64. Configure it on the commandline or using cmake-gui")
-	else()
-		message(SEND_ERROR "Platform ${CMAKE_SYSTEM} is not yet configured - please adjust CMake configuration")
+	if(APPLE AND NOT PLATFORM_ID)
+		set(PLATFORM_ID osx-${_CURRENT_OSX_VERSION}_${CMAKE_HOST_SYSTEM_PROCESSOR})
+	elseif(NOT PLATFORM_ID)
+		message(SEND_ERROR "On this platform '${PLATFORM}', please specify the LIBCURL_INSTALL_DIRECTORY or PLATFORM_ID. Configure one of them on the commandline or using cmake-gui")
 	endif()
-	set(LIBCURL_INSTALL_DIRECTORY ${CMAKE_CURRENT_LIST_DIR}/../../lib/curl/${LIBCURL_VERSION}/${PLATFORM_DESCRIPTOR})
+	set(LIBCURL_INSTALL_DIRECTORY ${CMAKE_CURRENT_LIST_DIR}/../../lib/curl/${LIBCURL_VERSION}/${PLATFORM_ID})
 endif() # handle lib-curl auto-setup
 
 include_directories(${LIBCURL_INSTALL_DIRECTORY}/include)
