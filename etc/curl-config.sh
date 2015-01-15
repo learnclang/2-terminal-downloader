@@ -16,16 +16,15 @@ install_dir=$build_dir/install
 
 cmake ../.. -DCMAKE_BUILD_TYPE=Release \
             -DCURL_STATICLIB=on \
-            -DHTTP_ONLY=on \
-       		-DCMAKE_INSTALL_PREFIX=$install_dir \
-       		-DBUILD_CURL_TESTS=off \
-       		-DBUILD_CURL_EXE=off \
-       		-DCMAKE_USE_OPENSSL=off \
-       		-DCURL_ZLIB=off \
-       		-DCURL_DISABLE_LDAP=off \
-       		-DCURL_DISABLE_LDAPS=off \
-       		-DCURL_DISABLE_CRYPTO_AUTH=off \
-       		"$@" || { echo "CMAKE FAILED - please check output and fix this script" && exit 1; }
+      	-DCMAKE_INSTALL_PREFIX=$install_dir \
+      	-DBUILD_CURL_TESTS=off \
+      	-DBUILD_CURL_EXE=off \
+      	-DCMAKE_USE_OPENSSL=off \
+      	-DCURL_ZLIB=off \
+      	-DCURL_DISABLE_LDAP=on \
+      	-DCURL_DISABLE_LDAPS=on \
+ 		-DCURL_DISABLE_CRYPTO_AUTH=on \
+ 		"$@" || { echo "CMAKE FAILED - please check output and fix this script" && exit 1; }
 
 export MAKEFLAGS="-j4"
 cmake --build . --config Release --target install || exit $?
