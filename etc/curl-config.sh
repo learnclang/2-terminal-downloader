@@ -24,7 +24,9 @@ cmake ../.. -DCMAKE_BUILD_TYPE=Release \
        		-DCURL_ZLIB=off \
        		-DCURL_DISABLE_LDAP=off \
        		-DCURL_DISABLE_LDAPS=off \
-       		-DCURL_DISABLE_CRYPTO_AUTH=off || { echo "CMAKE FAILED - please check output and fix this script" && exit 1; }
+       		-DCURL_DISABLE_CRYPTO_AUTH=off \
+       		"$@" || { echo "CMAKE FAILED - please check output and fix this script" && exit 1; }
 
-make -j4 install || exit $?
+export MAKEFLAGS="-j4"
+cmake --build . --config Release --target install || exit $?
 echo "Installation built successfully. You should now copy the build result at '$install_dir' to lib/<curl-version>/<curl-platform> and add it to git"
