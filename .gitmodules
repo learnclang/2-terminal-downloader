@@ -1,0 +1,3 @@
+[submodule "lib/curl/any/noarch"]
+	path = lib/curl/any/noarch
+	url = https://github.com/bagder/curl
