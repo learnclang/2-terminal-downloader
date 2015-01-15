@@ -11,7 +11,14 @@ Usage:
 */
 
 #include <stdio.h>
+#include "curl/curl.h"
 
 int main() {
+	CURL* curl = curl_easy_init();
+	if (!curl) {
+		fprintf(stderr, "curl initialization failure");
+		return 128;
+	}
 
+	return 0;
 }
