@@ -39,3 +39,12 @@ The rules are that we may use any resources we have available to us, including i
 There may be more than one solution, in fact I encourage you to! Some may take the easy-road and utilise libraries which I am sure there are, whereas other solutions may go closer to the metal and really get close to pulling those bytes off of a connection, buffering an amount in memory, and finally flushing bits out to disk.
 
 ### [`Next: Wiki ->`](https://github.com/learnclang/current/wiki)
+
+### Videos
+
+See how this branch evolved on youtube:
+
+* 01: [How to use an external library in a C-program](http://youtu.be/9s3UlY0OtTs)
+* 02: [How to statically link libcurl on windows ](http://youtu.be/0Y99gfU7mjM)
+* 03: [How to statically link libcurl on linux](http://youtu.be/DziKJKXsbB8)
+* 04: [How to approach and use libcurl as an absolute beginner](http://youtu.be/ItbpJ51VvS0)
