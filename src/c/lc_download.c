@@ -19,7 +19,7 @@ int main(int argc, char* args[]) {
     
     // Assume a single argument
     if (argc != 2) {
-        printf("Please enter a URL");
+        printf("Please enter a URL\n");
         return 1;
     }
 
